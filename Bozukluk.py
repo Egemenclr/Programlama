@@ -37,4 +37,5 @@ def recursiveCoin(coinValueList, change, knownResults):
             if numCoins < minCoins:
                 minCoins = numCoins
                 knownResults[change] = minCoins
+                
     return minCoins
