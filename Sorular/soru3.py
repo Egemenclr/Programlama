@@ -1,9 +1,4 @@
 
-# coding: utf-8
-
-# In[163]:
-
-
 import math
 def fonk(text):
     cumleler=text.split(".")
@@ -33,11 +28,6 @@ def matris_olustur(my_tuple):
                 matris[k][t]=my_tuple[(0,sayac)]
                 sayac+=1
     return matris
-
-
-# In[170]:
-
-
 def arama(string,matrix):
     w=[]
     for i in string:
@@ -52,25 +42,8 @@ def arama(string,matrix):
                 break
         else:
             print("var")
-
-
-# In[171]:
-
-
 a=fonk("egemeninc")
-len(a)
 b=matris_olustur(a)
-
-
-# In[177]:
-
-
 arama("ime",b)
 
-
-# In[173]:
-
-
-a=5
-a
 
