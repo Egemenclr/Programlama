@@ -4,23 +4,22 @@
 # In[80]:
 
 
-
-def kelime_listesi(string):
+def ayir(text):
+    sentences=text.split(".")
     my_Words=[]
-    kelimeler=string.split()
-    for kelime in kelimeler:
-        my_Words.append(kelime)
+    for cumleler in sentences:
+        kelimeler=cumleler.split()
+        for i in kelimeler:
+            my_Words.append(i)
     liste=[]
-    
     for i in range(len(my_Words)):
-        kontrol=1
+
         for j in range(int(len(my_Words[i])/2)):
-            if(my_Words[i][j] !=my_Words[i][len(my_Words[i])-j-1]):
-                kontrol=0
+            if(my_Words[i][j]!=my_Words[i][len(my_Words[i])-j-1]):  
                 break
-        if(kontrol==1):
+        else:
             liste.append(my_Words[i])
     return liste
 
-kelime_listesi("ege inceler efe anna kavak kfgdfgdfgk")
+ayir("egemen inceler.kavak.anna  efe.kflsdkask")
 
