@@ -14,19 +14,21 @@ def fonk(text):
         for j in range(len(myWords[i])):
             my_dict[(i,j)]=myWords[i][j]
     return my_dict
-def matris_olustur(my_tuple):
-    size=math.sqrt(len(my_tuple))
+def matris_olustur(my_Words):
     matris=[]
-    for i in range(int(size)):
+    size=int(math.sqrt(len(my_Words[0])))
+    for i in range(size):
         matris.append([])
-        for j in range(int(size)):
+        for j in range(size):
             matris[i].append(0)
-    sayac=0 
-    while(sayac<len(my_tuple)):
-        for k in range(int(size)):
-            for t in range(int(size)):
-                matris[k][t]=my_tuple[(0,sayac)]
+    sayac=0
+    if(sayac!=size-1):
+        for k in range(size):
+            for t in range(size):
+                print(k,t,sayac)
+                matris[k][t]=my_Words[0][sayac]
                 sayac+=1
+            
     return matris
 def arama(string,matrix):
     w=[]
