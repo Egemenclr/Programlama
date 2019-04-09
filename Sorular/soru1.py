@@ -12,11 +12,10 @@ def fonk(text):
     return myWords
 def var_mi(myWords,string):
     
-    for i in myWords:
-        if(string in myWords):
-            return myWords.index(string),True
-        else:
-            return False
+    if(string in myWords):
+        return myWords.index(string),True
+    else:
+        return False
 def index_listesi(myWords,string):
     my_list=[]
     for i in range(len(myWords)):
