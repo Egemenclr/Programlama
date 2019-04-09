@@ -1,19 +1,13 @@
 
 import math
-def fonk(text):
-    cumleler=text.split(".")
-    myWords=[]
-    harfler=[]
-    for kelimeler in cumleler:
-        kelime=kelimeler.split()
-        for x in kelime:
-            myWords.append(x)
-            
-    my_dict={}
-    for i in range(len(myWords)):
-        for j in range(len(myWords[i])):
-            my_dict[(i,j)]=myWords[i][j]
-    return my_dict
+def ayir(text):
+    sentences=text.split(".")
+    my_Words=[]
+    for cumleler in sentences:
+        kelimeler=cumleler.split()
+        for i in kelimeler:
+            my_Words.append(i)
+    return my_Words
 def matris_olustur(my_Words):
     matris=[]
     size=int(math.sqrt(len(my_Words[0])))
@@ -25,27 +19,26 @@ def matris_olustur(my_Words):
     if(sayac!=size-1):
         for k in range(size):
             for t in range(size):
-                print(k,t,sayac)
                 matris[k][t]=my_Words[0][sayac]
-                sayac+=1
-            
+                sayac+=1      
     return matris
-def arama(string,matrix):
-    w=[]
+def var_mi(matris,string):
+    if(len(string)>3):
+        return 
+    else:
+         w=[]
     for i in string:
         w.append(i)
-    size=len(matrix[0])
-    for k in range(size):
-        for t in range(size):
-            if(w[t]!=matrix[k][t] 
-                and w[t]!=matrix[t][k]
-              and w[t]!=matrix[size-k-1][size-t-1]
-              and w[t]!=matrix[size-t-1][size-k-1]):
+    size=len(matris[0])
+    for i in range(size):#satir
+        for j in range(size): #sutun
+            if(matris[i][j]!=w[j] 
+              and matris[j][i]!=w[j]
+              and matris[size-j-1][size-i-1]!=w[j]
+              and matris[size-i-1][size-j-1]!=w[j]):
                 break
         else:
             print("var")
-a=fonk("egemeninc")
-b=matris_olustur(a)
-arama("ime",b)
-
-
+words=ayir("egemeninc")
+matrix=matris_olustur(words)
+var_mi(matrix,"cni")
